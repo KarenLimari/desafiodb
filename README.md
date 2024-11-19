@@ -16,17 +16,18 @@ Este proyecto aborda la creación de un entorno Django conectado a una base de d
 2. Crear una base de datos llamada `adl-test`:
    ```sql
    CREATE DATABASE "adl-test";
+   ```
 
 ### 2. Configuración del Proyecto Django
 
 1. Crear el proyecto Django
 ```sql
 django-admin startproject desafiodb
-
+```
 2. Crear la aplicación dentro del proyecto:
 ```sql
 python manage.py startapp testdb
-
+```
 3. Configurar la conexión a PostgreSQL en el archivo settings.py
 ```sql
 DATABASES = {
@@ -39,7 +40,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+```
 ### 3. Creación del Modelo y Migraciones
 
 1. Definir el modelo en el archivo models.py de la aplicación testdb:
@@ -48,7 +49,7 @@ from django.db import models
 class AdlTest(models.Model):
     campo1 = models.CharField(max_length=100)
     valor1 = models.IntegerField()
-
+```
 2. Generar las migraciones:
 
 ```sql
