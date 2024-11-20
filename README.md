@@ -31,15 +31,16 @@ python manage.py startapp testdb
 3. Configurar la conexión a PostgreSQL en el archivo settings.py
 ```sql
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'adl-test',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+ 'default': {
+ 'ENGINE': 'django.db.backends.postgresql',
+ 'NAME': os.getenv('DB_NAME'),
+ 'USER': os.getenv('DB_USER'),
+ 'PASSWORD': os.getenv('DB_PASSWORD'),
+ 'HOST': os.getenv('DB-HOST', 'localhost'),
+ 'PORT': os.getenv('DB_PORT', '5432'),
+ }
 }
+
 ```
 ### 3. Creación del Modelo y Migraciones
 
